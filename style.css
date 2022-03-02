@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  height: 100vh;
+  /* grid-template-rows: 50px 1fr 50px; */
+  grid-template-rows: auto 1fr auto;
+  font-family: arial;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: skyblue;
+  border: 3px solid white;
+  color: white;
+  font-size: 2em;
+  padding: 10px;
+}
+
+.grid header {
+  display: flex;
+  justify-content: space-between;
+  background: none;
+}
+
+.grid header p {
+  color: skyblue;
+}
+
+.grid header p:nth-of-type(2) {
+  color: crimson;
+  letter-spacing: 20px;
+  font-weight: bold;
+}
+
+.grid main {
+  justify-content: flex-end;
+  align-items: flex-end;
+  background: url("main.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+.grid main h1 {
+  position: absolute;
+  animation: moving 5s infinite alternate linear;
+}
+
+.grid main h1:hover {
+  animation-play-state: paused;
+  cursor: crosshair;
+  color: crimson;
+}
+
+footer.item {
+  justify-content: flex-start;
+  padding-left: 30px;
+  background: none;
+}
+
+footer p {
+  font-size: 0.5em;
+  color: black;
+  font-weight: bold;
+}
+
+footer p span {
+  color: crimson;
+  font-weight: bold;
+}
+
+@keyframes moving {
+  from {
+    top: 90%;
+  }
+  to {
+    top: 0;
+  }
+}
